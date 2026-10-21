@@ -1,0 +1,9 @@
+Pillow>=10.4,<12
+numpy>=1.26,<2.4
+opencv-contrib-python==4.10.0.84
+pandas>=2.2,<3
+openpyxl>=3.1.5,<4
+PyYAML>=6.0.2,<7
+pytest>=8.3,<9
+pyautogui>=0.9.54; sys_platform == "win32"
+filelock>=3.16,<5

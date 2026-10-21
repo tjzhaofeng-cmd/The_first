@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+data/*/*
+!data/*/.gitkeep
+samples/private/
+.streamlit/secrets.toml
+data/demo/

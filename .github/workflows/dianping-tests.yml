@@ -1,0 +1,29 @@
+name: Dianping review project tests
+on:
+  push:
+    paths: ['dianping-review-project/**', '.github/workflows/dianping-tests.yml']
+  pull_request:
+    paths: ['dianping-review-project/**', '.github/workflows/dianping-tests.yml']
+permissions:
+  contents: read
+jobs:
+  synthetic-tests:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.12'
+          - os: windows-latest
+            python: '3.11'
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: dianping-review-project
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -r requirements.txt -r requirements-ui.txt
+      - run: python -m pip check
+      - run: python -m pytest -q

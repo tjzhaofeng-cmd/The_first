@@ -1,0 +1,26 @@
+place_name: 同济联合广场
+capture:
+  max_screenshots: 10
+  scroll_clicks: -2
+  delay_seconds: 5.0
+  unchanged_limit: 3
+  unchanged_similarity: 0.997
+  min_overlap_ratio: 0.3
+processing:
+  # Set true only after checking real 10-frame samples; otherwise queue all candidates.
+  layout_verified: false
+  ocr:
+    text_detection_model_dir: null
+    text_recognition_model_dir: null
+  min_ocr_confidence: 0.85
+  min_body_lines: 1
+  header_gap: 100
+  header_guard: 64
+  body_bottom_margin: 20
+  # Optional [x, y, width, height] boxes relative to screenshot, calibrated by you.
+  # Photo boxes are excluded from OCR body text; automatic photo detection is heuristic.
+  photo_boxes: []
+  rating:
+    min_star_size: 8
+    max_star_size: 36
+    shape_distance: 0.25
